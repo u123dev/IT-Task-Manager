@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
 
-from task_manager.models import Task, Worker, Position
+from task_manager.models import Task, Worker, Position, TaskType
 
 
 def index(request: HttpRequest) -> HttpResponse:
@@ -49,3 +49,27 @@ class PositionUpdateView(LoginRequiredMixin, generic.UpdateView):
 class PositionDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Position
     success_url = reverse_lazy("task_manager:position-list")
+
+
+class TaskTypeListView(LoginRequiredMixin, generic.ListView):
+    model = TaskType
+    context_object_name = "tasktype_list"
+    template_name = "task_manager/tasktype_list.html"
+    paginate_by = 3
+
+
+class TaskTypeCreateView(LoginRequiredMixin, generic.CreateView):
+    model = TaskType
+    fields = "__all__"
+    success_url = reverse_lazy("task_manager:tasktype-list")
+
+
+class TaskTypeUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = TaskType
+    fields = "__all__"
+    success_url = reverse_lazy("task_manager:tasktype-list")
+
+
+class TaskTypeDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = TaskType
+    success_url = reverse_lazy("task_manager:tasktype-list")
