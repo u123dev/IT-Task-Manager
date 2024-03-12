@@ -27,7 +27,8 @@ class Worker(AbstractUser):
         ]
 
     def __str__(self):
-        return f"{self.position} | {self.username}: {self.first_name} {self.last_name}"
+        return (f"{self.position} | "
+                f"{self.username}: {self.first_name} {self.last_name}")
 
 
 class TaskType(models.Model):
@@ -61,7 +62,9 @@ class Task(models.Model):
     task_type = models.ForeignKey(
         TaskType, on_delete=models.SET_NULL, null=True, related_name="tasks"
     )
-    assignees = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="tasks")
+    assignees = models.ManyToManyField(
+        settings.AUTH_USER_MODEL, related_name="tasks"
+    )
 
     class Meta:
         ordering = [
@@ -71,4 +74,5 @@ class Task(models.Model):
         ]
 
     def __str__(self):
-        return f"{self.name} ({self.priority}) | {'Completed' if self.is_completed else ('Deadline: ',  self.deadline)}"
+        return (f"{self.name} ({self.priority}) | "
+                f"{"Completed" if self.is_completed else (self.deadline)}")
