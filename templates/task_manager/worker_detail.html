@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>
+    Username: {{ worker.username }}
+    <a href="{% url 'task_manager:worker-delete' pk=worker.id %}" class="btn btn-danger link-to-page">
+      Delete
+    </a>
+
+    <a href="{% url 'task_manager:worker-update' pk=worker.id %}" class="btn btn-secondary link-to-page">
+      Update
+    </a>
+  </h1>
+
+  <div class="ml-3">
+  <table  class="table table-hover">
+  <tr>
+    <td>
+      <div class="row">
+        <div class="col-sm-3"><strong>First name:</strong></div>
+        <div class="col-sm-4">{{ worker.first_name }}</div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="row">
+        <div class="col-sm-3"><strong>Last name:</strong></div>
+        <div class="col-sm-4">{{ worker.last_name }}</div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="row">
+        <div class="col-sm-3"><strong>Position:</strong></div>
+        <div class="col-sm-4">{{ worker.position }}</div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="row">
+        <div class="col-sm-3"><strong>Email:</strong></div>
+        <div class="col-sm-4">{{ worker.email }}</div>
+      </div>
+    </td>
+  </tr>
+
+  </table>
+  </div>
+  <br>
+
+  <div class="ml-3">
+    {% if worker.tasks.all %}
+    <h4 style="text-align: center">Tasks</h4>
+
+    <table  class="table table-hover">
+    <tr>
+      <th><p class="text-muted">Task name:</p></th>
+      <th><p class="text-muted">Priority:</p></th>
+      <th><p class="text-muted">Deadline:</p></th>
+      <th><p class="text-muted">Type:</p></th>
+      <th><p class="text-muted">Status:</p></th>
+    </tr>
+
+    {% for task in worker.tasks.all %}
+        <tr>
+          <td><p> {{ task.name }}</p></td>
+          <td><p> {{ task.priority }}</p></td>
+          <td><p> {{ task.deadline }}</p></td>
+          <td><p> {{ task.task_type.name }}</p></td>
+          <td>
+            {% if task.is_completed %}
+              <p> Completed </p>
+            {% else %}
+              <p>-</p>
+            {% endif %}
+          </td>
+        </tr>
+
+    {% empty %}
+    {% endfor %}
+    </table>
+    {% else %}
+        <h5>No assigned tasks ... </h5>
+        <h5>But you can create it now.</h5>
+    {% endif %}
+  </div>
+{% endblock %}
