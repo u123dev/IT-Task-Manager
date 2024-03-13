@@ -12,9 +12,10 @@
     {{ search_form|crispy }}
     <input type="submit" value="🔍" class="btn btn-secondary">
   </form>  
+  <br>
 
     {% if worker_list %}
-    <table class="table">
+    <table class="table table-hover table-striped ">
       <tr>
         <th>ID</th>
         <th>Username</th>
@@ -26,7 +27,6 @@
       <tr>
         <td>{{ worker.id }}</td>
         <td><a href="{{ worker.get_absolute_url }}">{{ worker.username }} {% if user == worker %} (Me){% endif %}</a></td>
-        <td><a href="{% url 'task_manager:worker-detail' worker.id %}">{{ worker.username }} {% if user == worker %} (Me){% endif %}</a></td>
         <td>{{ worker.first_name }}</td>
         <td>{{ worker.last_name }}</td>
         <td>{{ worker.position }}</td>
