@@ -79,4 +79,7 @@ class Task(models.Model):
 
     def __str__(self):
         return (f"{self.name} ({self.priority}) | "
-                f"{"Completed" if self.is_completed else (self.deadline)}")
+                f"{"Completed" if self.is_completed else self.deadline}")
+
+    def get_absolute_url(self):
+        return reverse("task_manager:task-detail", kwargs={"pk": self.pk})
