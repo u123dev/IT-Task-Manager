@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 
-from task_manager.models import Worker
+from task_manager.models import Worker, Task
 
 
 class PositionSearchForm(forms.Form):
@@ -52,3 +52,9 @@ class WorkerUpdateForm(forms.ModelForm):
             "position",
             "email",
         )
+
+
+class TaskCreationForm(forms.ModelForm):
+    class Meta:
+        model = Task
+        fields = "__all__"
