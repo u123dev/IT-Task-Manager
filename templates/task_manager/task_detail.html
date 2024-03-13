@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>
+    Task: {{ task.name }}
+    <a href="{% url 'task_manager:task-delete' pk=task.id %}" class="btn btn-danger link-to-page">
+      Delete
+    </a>
+
+    <a href="{% url 'task_manager:task-update' pk=task.id %}" class="btn btn-secondary link-to-page">
+      Update
+    </a>
+  </h1>
+
+  <div class="ml-3">
+  <table  class="table table-hover">
+  <tr>
+    <td>
+      <div class="row">
+        <div class="col-sm-3"><strong>Task name:</strong></div>
+        <div class="col-sm-4">{{ task.name }}</div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="row">
+        <div class="col-sm-3"><strong>Deadline:</strong></div>
+        <div class="col-sm-4">{{ task.deadline }}</div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="row">
+        <div class="col-sm-3"><strong>Priority:</strong></div>
+        <div class="col-sm-4">{{ task.priority }}</div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="row">
+        <div class="col-sm-3"><strong>Status:</strong></div>
+        <div class="col-sm-4">{{ task.is_completed }}</div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="row">
+        <div class="col-sm-3"><strong>Task type:</strong></div>
+        <div class="col-sm-4">{{ task.task_type }}</div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="row">
+        <div class="col-sm-3"><strong>Description:</strong></div>
+        <div class="col-sm-4">{{ task.description }}</div>
+      </div>
+    </td>
+  </tr>    
+
+  </table>
+  </div>
+  <br>
+
+  <div class="ml-3">
+    {% if task.assignees.all %}
+    <h4 style="text-align: center">Workers</h4>
+
+    <table class="table table-hover table-striped">
+    <tr>
+      <th><p class="text-muted">Position</p></th>
+      <th><p class="text-muted">Name</p></th>
+      <th><p class="text-muted">Username</p></th>
+    </tr>
+
+    {% for worker in task.assignees.all %}
+        <tr>
+          <td><p> {{ worker.position }}</p></td>
+          <td><p> {{ worker.first_name }} {{ worker.last_name }}</p></td>
+          <td><p> <a href="{% url 'task_manager:worker-detail' pk=worker.id %}">{{ worker.username }}</a></p></td>
+        </tr>
+
+    {% empty %}
+    {% endfor %}
+    </table>
+    {% else %}
+        <h5>No assignees ... </h5>
+    {% endif %}
+  </div>
+{% endblock %}
