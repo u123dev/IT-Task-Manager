@@ -2,16 +2,18 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
-    <h1>
-      Task List
-      <a href="{% url 'task_manager:task-create' %}" class="btn btn-primary link-to-page">
-        Create
-      </a>
-    </h1>
+  <h1>
+    Task List
+    <a href="{% url 'task_manager:task-create' %}" class="btn btn-primary link-to-page">
+      Create
+    </a>
+  </h1>
+  
   <form method="get" action="" class="form-inline">
     {{ search_form|crispy }}
     <input type="submit" value="🔍" class="btn btn-secondary">
   </form>  
+  <br>
 
     {% if task_list %}
     <table class="table table-hover table-striped">
@@ -31,7 +33,13 @@
         <td>{{ task.deadline|date:"D, d M Y"  }}</td>
         <td>{{ task.priority }}</td>
         <td>{{ task.task_type }}</td>
-        <td>{{ task.is_completed }}</td>
+        <td>
+            {% if task.is_completed %}
+              <p> Completed </p>
+            {% else %}
+              <p>In progress</p>
+            {% endif %}
+        </td>
         <td>{{ task.description|truncatewords:10 }} <a href="{{ task.get_absolute_url }}"> more detail</a>...</td>
       </tr>
 

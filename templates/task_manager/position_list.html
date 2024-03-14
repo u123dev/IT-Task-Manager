@@ -12,9 +12,10 @@
     {{ search_form|crispy }}
     <input type="submit" value="🔍" class="btn btn-secondary">
   </form>  
+  <br>
 
   {% if position_list %}
-    <table class="table">
+    <table class="table table-hover table-striped">
       <tr>
         <th>Id</th>
         <th>Name</th>
