@@ -1,4 +1,7 @@
+import datetime
+
 from django import forms
+from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
 
 from task_manager.models import Worker, Task
@@ -55,6 +58,25 @@ class WorkerUpdateForm(forms.ModelForm):
 
 
 class TaskCreationForm(forms.ModelForm):
+    assignees = forms.ModelMultipleChoiceField(
+        queryset=get_user_model().objects.all(),
+        widget=forms.CheckboxSelectMultiple,
+    )
+
+    expected_deadline_date = datetime.date.today() + datetime.timedelta(days=5)
+    deadline = forms.DateField(
+        widget=forms.DateInput(format="%Y-%m-%d", attrs={"type": "date"}),
+        input_formats=["%Y-%m-%d"],
+        initial=expected_deadline_date,
+    )
+
+    TRUE_FALSE_CHOICES = ((False, 'No'), (True, 'Yes'))
+    is_completed = forms.ChoiceField(
+        choices=TRUE_FALSE_CHOICES,
+        label="Is Completed ?",
+        initial='',
+        widget=forms.Select(), required=True)
+
     class Meta:
         model = Task
         fields = "__all__"
