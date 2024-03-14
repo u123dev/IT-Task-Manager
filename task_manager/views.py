@@ -135,7 +135,7 @@ class WorkerListView(LoginRequiredMixin, generic.ListView):
 
 class WorkerDetailView(LoginRequiredMixin, generic.DetailView):
     model = Worker
-    #queryset = Worker.objects.all().select_related("position")
+    queryset = Worker.objects.all(). prefetch_related("tasks")
 
 
 class WorkerCreateView(LoginRequiredMixin, generic.CreateView):
@@ -177,7 +177,7 @@ class TaskListView(LoginRequiredMixin, generic.ListView):
 
 class TaskDetailView(LoginRequiredMixin, generic.DetailView):
     model = Task
-    #queryset = Task.objects.all().select_related("position")
+    queryset = Task.objects.all().prefetch_related("assignees")
 
 
 class TaskCreateView(LoginRequiredMixin, generic.CreateView):
