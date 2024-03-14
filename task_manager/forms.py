@@ -36,6 +36,15 @@ class WorkerSearchForm(forms.Form):
         )
     )
 
+class WorkerFilterForm(forms.Form):
+    TRUE_FALSE_ALL_CHOICES = (("all", "All Tasks"), ("no", "In progress"), ("yes", "Completed"), )
+    is_completed = forms.ChoiceField(
+        choices=TRUE_FALSE_ALL_CHOICES,
+        label="",
+        initial="",
+        widget=forms.Select(attrs={'onchange': 'submit();'}),
+        required=True)
+
 
 class WorkerCreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):

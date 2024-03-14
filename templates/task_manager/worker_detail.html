@@ -54,18 +54,23 @@
 
   <div class="ml-3">
     {% if worker.tasks.all %}
-    <h4 style="text-align: center">Tasks</h4>
+
+    <h2 class="col-sm-4" style="text-align: center">Assigned Tasks</h2>
 
     <table class="table table-hover table-striped">
     <tr>
-      <th><p class="text-muted">Task name:</p></th>
-      <th><p class="text-muted">Priority:</p></th>
-      <th><p class="text-muted">Deadline:</p></th>
-      <th><p class="text-muted">Type:</p></th>
-      <th><p class="text-muted">Status:</p></th>
+      <th><p class="text-muted">Task name</p></th>
+      <th><p class="text-muted">Priority</p></th>
+      <th><p class="text-muted">Deadline</p></th>
+      <th><p class="text-muted">Type</p></th>
+      <th>
+        <form method="get">
+              {{ filter_form.as_p }}
+        </form>
+      </th>
     </tr>
 
-    {% for task in worker.tasks.all %}
+    {% for task in tasks %}
         <tr>
           <td><p><a href="{% url 'task_manager:task-detail' pk=task.id %}">{{ task.name }}</a></p></td>
           <td><p> {{ task.priority }}</p></td>
@@ -75,17 +80,20 @@
             {% if task.is_completed %}
               <p> Completed </p>
             {% else %}
-              <p>-</p>
+              <p> In progress </p>
             {% endif %}
           </td>
         </tr>
-
     {% empty %}
+        <tr>
+          <td>
+            No suitable tasks ...
+          </td>
+        </tr>
     {% endfor %}
     </table>
     {% else %}
-        <h5>No assigned tasks ... </h5>
-        <h5>But you can create it now.</h5>
+        <h5>No assigned tasks. - Select <a href="{% url 'task_manager:task-list' %}">it now...</a></h5>
     {% endif %}
   </div>
 {% endblock %}

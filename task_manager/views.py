@@ -12,7 +12,8 @@ from task_manager.forms import (
     WorkerCreationForm,
     WorkerUpdateForm,
     TaskCreationForm,
-    TaskSearchForm
+    TaskSearchForm,
+    WorkerFilterForm
 )
 from task_manager.models import Task, Worker, Position, TaskType
 
@@ -136,6 +137,24 @@ class WorkerListView(LoginRequiredMixin, generic.ListView):
 class WorkerDetailView(LoginRequiredMixin, generic.DetailView):
     model = Worker
     queryset = Worker.objects.all(). prefetch_related("tasks")
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(WorkerDetailView, self).get_context_data(**kwargs)
+        is_completed = self.request.GET.get("is_completed", "")
+        context["filter_form"] = WorkerFilterForm(
+            initial={"is_completed": is_completed}
+        )
+
+        worker = self.object
+        tasks = Task.objects.filter(assignees=worker)
+        if is_completed == "no":
+            tasks = tasks.filter(is_completed=False)
+        elif is_completed == "yes":
+            tasks = tasks.filter(is_completed=True)
+
+        context['tasks'] = tasks
+
+        return context
 
 
 class WorkerCreateView(LoginRequiredMixin, generic.CreateView):
