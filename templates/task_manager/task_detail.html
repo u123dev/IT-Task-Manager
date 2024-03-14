@@ -43,7 +43,19 @@
     <td>
       <div class="row">
         <div class="col-sm-3"><strong>Status:</strong></div>
-        <div class="col-sm-4">{{ task.is_completed }}</div>
+        <div class="col-sm-4">
+          {% if task.is_completed %}
+            Completed
+            <a href="{% url 'task_manager:set-task-completed' pk=task.id %}" class="btn btn-sm btn-outline-warning link-to-page">
+              Set Task In Progress
+            </a>
+          {% else %}
+            In progress
+            <a href="{% url 'task_manager:set-task-completed' pk=task.id %}" class="btn btn-sm btn-outline-success link-to-page">
+              Set Task Completed
+            </a>
+          {% endif %}
+        </div>
       </div>
     </td>
   </tr>
@@ -69,11 +81,11 @@
   <br>
 
   {% if user in task.assignees.all %}
-    <a href="{% url 'task_manager:toggle-task-assign' pk=task.id %}" class="btn btn-danger link-to-page">
+    <a href="{% url 'task_manager:toggle-task-assign' pk=task.id %}" class="btn btn-sm btn-outline-danger link-to-page">
       Delete Me ({{ user.username }}) from this task
     </a>
   {% else %}
-    <a href="{% url 'task_manager:toggle-task-assign' pk=task.id %}" class="btn btn-success link-to-page">
+    <a href="{% url 'task_manager:toggle-task-assign' pk=task.id %}" class="btn btn-sm btn-outline-success link-to-page">
       Assign Me ({{ user.username }}) to this task
     </a>
   {% endif %}

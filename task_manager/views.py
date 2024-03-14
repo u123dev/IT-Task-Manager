@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
@@ -221,6 +222,21 @@ def toggle_assign_task_to_current_user(request, pk):
         worker.tasks.remove(pk)
     else:
         worker.tasks.add(pk)
+    return HttpResponseRedirect(reverse_lazy(
+        "task_manager:task-detail", args=[pk])
+    )
+
+
+@login_required
+def set_completed_task(request, pk):
+    task = Task.objects.get(id=pk)
+    if task:
+        if task.is_completed:
+            task.is_completed = False
+        else:
+            task.is_completed = True
+        task.save()
+
     return HttpResponseRedirect(reverse_lazy(
         "task_manager:task-detail", args=[pk])
     )
