@@ -23,6 +23,7 @@ def index(request: HttpRequest) -> HttpResponse:
     """View function for the home page of the site."""
 
     num_tasks = Task.objects.count()
+    num_tasks_in_progress = Task.objects.filter(is_completed=False).count()
     num_workers = Worker.objects.count()
     num_positions = Position.objects.count()
 
@@ -32,6 +33,7 @@ def index(request: HttpRequest) -> HttpResponse:
     context = {
         "num_tasks": num_tasks,
         "num_workers": num_workers,
+        "num_tasks_in_progress": num_tasks_in_progress,
         "num_positions": num_positions,
         "num_visits": num_visits + 1,
     }
