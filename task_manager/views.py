@@ -36,6 +36,8 @@ def index(request: HttpRequest) -> HttpResponse:
         "num_tasks_in_progress": num_tasks_in_progress,
         "num_positions": num_positions,
         "num_visits": num_visits + 1,
+        "segment" : "dashboard",    # for template
+
     }
 
     return render(request, "task_manager/index.html", context=context)
@@ -58,6 +60,7 @@ class PositionListView(LoginRequiredMixin, generic.ListView):
         context = super(PositionListView, self).get_context_data(**kwargs)
         name = self.request.GET.get("name", "")
         context["search_form"] = PositionSearchForm(initial={"name": name})
+        context["segment"] = "position_list"    # for template
         return context
 
 
@@ -95,6 +98,7 @@ class TaskTypeListView(LoginRequiredMixin, generic.ListView):
         context = super(TaskTypeListView, self).get_context_data(**kwargs)
         name = self.request.GET.get("name", "")
         context["search_form"] = TaskTypeSearchForm(initial={"name": name})
+        context["segment"] = "tasktype_list"    # for template
         return context
 
 
@@ -134,6 +138,7 @@ class WorkerListView(LoginRequiredMixin, generic.ListView):
         context["search_form"] = WorkerSearchForm(
             initial={"username": username}
         )
+        context["segment"] = "worker_list"    # for template
         return context
 
 
@@ -155,7 +160,7 @@ class WorkerDetailView(LoginRequiredMixin, generic.DetailView):
         elif is_completed == "yes":
             tasks = tasks.filter(is_completed=True)
 
-        context['tasks'] = tasks
+        context["tasks"] = tasks
 
         return context
 
@@ -194,6 +199,7 @@ class TaskListView(LoginRequiredMixin, generic.ListView):
         context["search_form"] = TaskSearchForm(
             initial={"name": name}
         )
+        context["segment"] = "task_list"    # for template
         return context
 
 
@@ -242,3 +248,12 @@ def set_completed_task(request, pk):
     return HttpResponseRedirect(reverse_lazy(
         "task_manager:task-detail", args=[pk])
     )
+
+
+def about(request: HttpRequest) -> HttpResponse:
+    """View function for the about page of the site."""
+
+    context = {
+        "segment" : "about",    # for template
+    }
+    return render(request, "task_manager/about.html", context=context)

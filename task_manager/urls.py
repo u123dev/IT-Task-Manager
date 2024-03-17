@@ -21,7 +21,8 @@ from task_manager.views import (
     TaskDetailView,
     TaskCreateView,
     toggle_assign_task_to_current_user,
-    set_completed_task
+    set_completed_task,
+    about
 )
 
 urlpatterns = [
@@ -46,6 +47,7 @@ urlpatterns = [
     path("tasks/<int:pk>/delete/", TaskDeleteView.as_view(), name="task-delete"),
     path("tasks/<int:pk>/toggle-asign/", toggle_assign_task_to_current_user, name="toggle-task-assign"),
     path("tasks/<int:pk>/set-completed/", set_completed_task, name="set-task-completed"),
+    path("about/", about, name="about"),
 ]
 
 app_name = "task_manager"
