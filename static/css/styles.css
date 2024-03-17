@@ -1,0 +1,12 @@
+body {
+    margin-top: 20px;
+}
+
+.link-to-page {
+    float: right;
+    margin: 0 2px 0 2px;
+}
+
+.col-content {
+  min-width: 300px;
+}

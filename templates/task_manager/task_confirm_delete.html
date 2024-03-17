@@ -1,0 +1,11 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+  <h1>Delete task: '{{ task.name }}' ?</h1>
+  <form action="" method="post">
+    {% csrf_token %}
+  
+    <input type="submit" value="Yes" class="btn btn-danger">
+    <a href="{{ task.get_absolute_url }}" class="btn btn-warning">Cancel</a>
+  </form>
+{% endblock %}

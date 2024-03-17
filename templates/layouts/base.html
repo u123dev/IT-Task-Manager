@@ -1,0 +1,66 @@
+<!--
+=========================================================
+* Volt Free - Bootstrap 5 Dashboard
+=========================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- Primary Meta Tags -->
+
+<title>
+    IT Task Manager [Django & Volt Dashboard] - {% block title %}{% endblock %} | IT Task 
+</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="title" content="IT Task Manager">
+<meta name="author" content="u123dev">
+<meta name="description" content="IT Task Manager [Django & Volt Dashboard]">
+<meta name="keywords" content="IT Task Manager [Django & Volt Dashboard]" />
+<link rel="canonical" href="https://u123dev">
+
+<!-- Favicon -->
+<link rel="apple-touch-icon" sizes="120x120" href="/static/assets/img/favicon/favicon-96x96-it.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/assets/img/favicon/favicon-32x32-it.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/assets/img/favicon/favicon-16x16-it.png">
+<link rel="manifest" href="/static/assets/img/favicon/site.webmanifest">
+<link rel="mask-icon" href="/static/assets/img/favicon/safari-pinned-tab.svg" color="#ffffff">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<link type="text/css" href="/static/assets/vendor/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
+
+<link type="text/css" href="/static/assets/vendor/notyf/notyf.min.css" rel="stylesheet">
+<link type="text/css" href="/static/assets/css/volt.css" rel="stylesheet">
+
+<!-- Specific Page JS goes HERE  -->    
+{% block stylesheets %}{% endblock stylesheets %}
+
+</head>
+<body>
+
+    {% include 'includes/sidebar.html' %}
+    
+    <main class="content">
+      
+      {% include 'includes/navigation.html' %}
+
+      {% block content %}{% endblock content %} 
+
+      {% block pagination %}
+        {% include "includes/pagination.html" %}
+      {% endblock %}
+    
+      {% include 'includes/footer.html' %}
+
+    </main>
+
+  {% include 'includes/scripts.html' %}
+    
+  <!-- Specific Page JS goes HERE  -->
+  {% block javascripts %}{% endblock javascripts %}  
+      
+</body>
+</html>

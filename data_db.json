@@ -1,0 +1,496 @@
+[
+{
+  "model": "sessions.session",
+  "pk": "11yvvm474e3weizialhizkpqi8j7y4tj",
+  "fields": {
+    "session_data": ".eJxVjDkOgzAQRe8ydWSBd1OmzxmsGS_BWYyEIU2UuwckGtr_3vtfqOvbf0orS4NBXMDjuox-bWn2JcIAPZw2wvBMdQfxgfU-sTDVZS7EdoUdtLHbFNPreringxHbuNVccCV4Mhkzui5Q70TmNjquNScrTZS6U9EZDNIRio1Yk62SSgdCSj38_nbEPOU:1rlaOe:6cD4GVh1kdEQ9pTrFrkhqcnr4CIkdL2JRBy9hRTku1A",
+    "expire_date": "2024-03-30T20:12:48.514Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "1ajatimwd47zqk6obsavol8bm35f69wy",
+  "fields": {
+    "session_data": ".eJxVjDkOgzAQRe8ydWTBeKdMnzNY4y04i5EwpIly94BEQ_vfe_8LdX27T2llaTDgBRyty-jWlmZXIgzQw2nzFJ6p7iA-qN4nFqa6zMWzXWEHbew2xfS6Hu7pYKQ2bjVylByTzpTJdsH3lmc00aJS6I3QUahORqspCOuJb8TobKSQKnjyqYffH3YYPOQ:1rlauH:-5NlMZvGr5C55d7S254Y06GJfpEPY9ol7T4X1iMO1h0",
+    "expire_date": "2024-03-30T20:45:29.792Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "2b2orz0zn2ij63gfjarf72mpwxdag1ex",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGlnx36akzxmsXa-NA8iR4qRC3J1ESgHtm5n3ZhG2tcat5yVOxK5MsMvvhpCeuR2AHtDuM09zW5cJ-aHwk3Y-zpRft9P9O6jQ615LJY2S2RUoEIaEIqgiPQVprUSvHWk7GAoOkg4IaifeFW-0sQkBs2CfL9IRN7c:1rlZu5:PtOCS5QpOUgk0srwfemlg50GWdq9pWKacO8sGqwAQHQ",
+    "expire_date": "2024-03-30T19:41:13.862Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "2nd4vl1ubww1j1e0d7hwox9wetpjpm40",
+  "fields": {
+    "session_data": ".eJxVjrkOgzAQRP_FdWTB-qZMn2-wdn0E5zAShjRR_j0gUSTtvDejeTOP6zL6taXZl8gG1rPTb0YY7qnuIN6wXiceprrMhfiu8IM2fpliepwP929gxDZubRCgBCSTMaPrAvVOZLDRgdZAVpoodaeiMxikIxQbsSZbJZUOhJT2V3V9-ldpZWlsgM8XPew85A:1rkRlJ:NUNE3AHrzhLbQyU1Vl9nHSMDPmX3VnxB3UDVA0GUycg",
+    "expire_date": "2024-03-27T16:47:29.199Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "3qx4esy5le23fnbiajmx5lntajxmyeos",
+  "fields": {
+    "session_data": ".eJxVjDkOgzAQRe8ydWTBeKdMnzNY4y04i5EwpIly94BEQ_vfe_8LdX27T2llaTDgBRyty-jWlmZXIgzQw2nzFJ6p7iA-qN4nFqa6zMWzXWEHbew2xfS6Hu7pYKQ2bjVylByTzpTJdsH3lmc00aJS6I3QUahORqspCOuJb8TobKSQKnjyqYffH3YYPOQ:1rlZpY:-rQaNXucXfLh82rp4uz0-cVWjTetWk7mnFBn-mG8p7I",
+    "expire_date": "2024-03-30T19:36:32.142Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "5ucnx17egt111zio233obmepolk7jotn",
+  "fields": {
+    "session_data": ".eJxVjjkOwyAURO9CHSGzg8v0OQP6nyWQBUvGThPl7rElF0k7781o3sTDuhS_9jT7GslIGDn9ZgjhntoO4g3adaJhastcke4KPWinlymmx_lw_wYK9LK1ueBK8GQyZHBDQOZE5jY6rjVHK02UelDRGQjSIYiNWJOtkkoHBEz7q7Y-_av2unQyMvf5AnrCPRw:1rk3x7:9rNZJOTcsjOR0bDjoD6A0_U8cADmF3rCjWDYgdrFOIQ",
+    "expire_date": "2024-03-26T15:22:05.990Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "7tyn2ykamecqh7u4qldefap4anknp5a2",
+  "fields": {
+    "session_data": ".eJxVjDkOgzAQRe8ydWSBd1OmzxmsGS_BWYyEIU2UuwckGtr_3vtfqOvbf0orS4NBXsDjuox-bWn2JcIAPZw2wvBMdQfxgfU-sTDVZS7EdoUdtLHbFNPreringxHbuNVccCV4Mhkzui5Q70TmNjquNScrTZS6U9EZDNIRio1Yk62SSgdCSj38_ndwPOY:1rlPKt:59QkUUMqNxaZHQSop3z6v1eIaodehwlvEmecXnXZELI",
+    "expire_date": "2024-03-30T08:24:11.659Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "8jr34g88jy16epbab80sb4kj6wy63oe8",
+  "fields": {
+    "session_data": ".eJxVjDkOwyAUBe_y6wiZHVymzxnQZ4vJApKx00S5e2zJjds3M-8LdX27T-ll6TDSCzhcl8mtPc2uRBiBwmnzGJ6p7iA-sN4bCa0uc_FkV8hBO7m1mF7Xwz0dTNinrWacSc6SzpjRDsFTyzMz0TKlmDdCR6EGGa3GIKxHvhGjs5FCquDRJwq_P3VsPOM:1rlshJ:_no9lrNZa8Zy2VI3xGYB5LOZiAfPWMhSBqdGqrJA6cY",
+    "expire_date": "2024-03-31T15:45:17.669Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "eg53v3ep391yky70d2bdcfmg4g7wxh9q",
+  "fields": {
+    "session_data": ".eJxVjDkOgzAQRe8ydWSBd1OmzxmsGS_BWYyEIU2UuwckGtr_3vtfqOvbf0orS4NBXsDjuox-bWn2JcIAPZw2wvBMdQfxgfU-sTDVZS7EdoUdtLHbFNPreringxHbuNVccCV4Mhkzui5Q70TmNjquNScrTZS6U9EZDNIRio1Yk62SSgdCSj38_ndwPOY:1rlFAS:5bjrrlmNoGyYxcFDAwLOzmtP4PqcF8qhpP1ddU_E0pM",
+    "expire_date": "2024-03-29T21:32:44.603Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "gn11a5qmhd4hkfkvdfsq0tghnccn642m",
+  "fields": {
+    "session_data": ".eJxVjDkOgzAQRe8ydWTBeKdMnzNY4y04i5EwpIly94BEQ_vfe_8LdX27T2llaTDgBRyty-jWlmZXIgzQw2nzFJ6p7iA-qN4nFqa6zMWzXWEHbew2xfS6Hu7pYKQ2bjVylByTzpTJdsH3lmc00aJS6I3QUahORqspCOuJb8TobKSQKnjyqYffH3YYPOQ:1rlWxi:NpV092P1SHxXqsDHcIkbQ_CEIENduJ7swlDKzYcAXxg",
+    "expire_date": "2024-03-30T16:32:46.533Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "j3nlritq3sulp9hntxksvcd8y4xdguz2",
+  "fields": {
+    "session_data": ".eJxVjDkOgzAQRe8ydWSBd1OmzxmsGS_BWYyEIU2UuwckGtr_3vtfqOvbf0orS4PBXMDjuox-bWn2JcIAPZw2wvBMdQfxgfU-sTDVZS7EdoUdtLHbFNPreringxHbuNVccCV4Mhkzui5Q70TmNjquNScrTZS6U9EZDNIRio1Yk62SSgdCSj38_nl0POk:1rl2bk:qeHqh4mWMlF_-oyT3Tz0HP8Vlsfc3XUgFmzztEiq_yE",
+    "expire_date": "2024-03-29T08:08:04.506Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "l8vrsrfgvkpues753sn1aq990ev7c0v5",
+  "fields": {
+    "session_data": "eyJudW1fdmlzaXRzIjoxfQ:1rlX1o:g5U7z-6qaeSbBe6X182JJ-nMYKNfgJxaFIV0UZrnyKo",
+    "expire_date": "2024-03-30T16:37:00.666Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "o4t9g3t0323s9u7mrdy06k8cqlrwcck8",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGlnx36akzxmsXa-NA8iR4qRC3J1ESgHtm5n3ZhG2tcat5yVOxK5MsMvvhpCeuR2AHtDuM09zW5cJ-aHwk3Y-zpRft9P9O6jQ615LJY2S2RUoEIaEIqgiPQVprUSvHWk7GAoOkg4IaifeFW-0sQkBs2CfL9IRN7c:1rkg1D:xpJ_4UgEMCknQQYrfVbMoxLzhl89o_mF_5GL03RQYCI",
+    "expire_date": "2024-03-28T08:00:51.412Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ofxgucqypzs0z6frp1nctti3tndalz83",
+  "fields": {
+    "session_data": ".eJxVjDkOgzAQRe8ydWSBd1OmzxmsGS_BWYyEIU2UuwckGtr_3vtfqOvbf0orS4NBXMDjuox-bWn2JcIAPZw2wvBMdQfxgfU-sTDVZS7EdoUdtLHbFNPreringxHbuNVccCV4Mhkzui5Q70TmNjquNScrTZS6U9EZDNIRio1Yk62SSgdCSj38_nbEPOU:1rluLK:MstUisJQWPq_Uar_tcr778hwKqs1bhCiA-vI1UDzAEM",
+    "expire_date": "2024-03-31T17:30:42.637Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "pz8mow759qlk8tw0uwlvs9vxund7b9dn",
+  "fields": {
+    "session_data": "eyJudW1fdmlzaXRzIjoxfQ:1rlPiw:xocQ_HA5-CII_RuwQl9BqnxZETTTRDnaF8sRugMXc5s",
+    "expire_date": "2024-03-30T08:49:02.814Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "tokmiw7ow35l29invcppmvqp4fome7iu",
+  "fields": {
+    "session_data": ".eJxVjDkOwyAUBe_y6wiZHVymzxnQZ4vJApKx00S5e2zJjds3M-8LdX27T-ll6TDSCzhcl8mtPc2uRBiBwmnzGJ6p7iA-sN4bCa0uc_FkV8hBO7m1mF7Xwz0dTNinrWacSc6SzpjRDsFTyzMz0TKlmDdCR6EGGa3GIKxHvhGjs5FCquDRJwq_P3VsPOM:1rl7yw:2HVtanL2IWt4AVm57RmU0PnkOc07dQbRBOhrEQexspM",
+    "expire_date": "2024-03-29T13:52:22.108Z"
+  }
+},
+{
+  "model": "task_manager.position",
+  "pk": 1,
+  "fields": {
+    "name": "Developer"
+  }
+},
+{
+  "model": "task_manager.position",
+  "pk": 2,
+  "fields": {
+    "name": "Project Manager"
+  }
+},
+{
+  "model": "task_manager.position",
+  "pk": 3,
+  "fields": {
+    "name": "QA"
+  }
+},
+{
+  "model": "task_manager.position",
+  "pk": 4,
+  "fields": {
+    "name": "Designer"
+  }
+},
+{
+  "model": "task_manager.position",
+  "pk": 5,
+  "fields": {
+    "name": "DevOps"
+  }
+},
+{
+  "model": "task_manager.position",
+  "pk": 6,
+  "fields": {
+    "name": "Frontender"
+  }
+},
+{
+  "model": "task_manager.position",
+  "pk": 7,
+  "fields": {
+    "name": "Developer Py"
+  }
+},
+{
+  "model": "task_manager.position",
+  "pk": 8,
+  "fields": {
+    "name": "Developer Java"
+  }
+},
+{
+  "model": "task_manager.position",
+  "pk": 9,
+  "fields": {
+    "name": "Developer FullStack"
+  }
+},
+{
+  "model": "task_manager.worker",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$WPqFDa4TfSflYc0FOiCC1E$8kAj//hU6yrYjvChCLeccMAZukAjnk29Wg8kYHnLdzE=",
+    "last_login": "2024-03-17T16:12:45.156Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "Nick",
+    "last_name": "Tan",
+    "email": "admin@admin.admin",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-03-11T22:06:37Z",
+    "position": 7,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "task_manager.worker",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$DWRtYD4Za7R2Tm4KzfZMVY$8jbFLv77kvPqCV3bHXZLLK743tapukFJt4+WyxcWwHg=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "magic",
+    "first_name": "Mary",
+    "last_name": "Clark",
+    "email": "mary@mary.mary",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-03-11T22:32:56Z",
+    "position": 4,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "task_manager.worker",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$EeYgPJt8XLmqB4emKfhJlX$s7dJkTLUedF6KMneump9074PLcH5EJK2N+bL6v/ggMo=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "gouchan",
+    "first_name": "Gou",
+    "last_name": "Chan",
+    "email": "gou@gou.gou",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-03-12T12:01:49.012Z",
+    "position": 6,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "task_manager.worker",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$jhNnwP36PsrRjT3B9Ck7Qb$LnwuScsNjZX2A0zxe02BP2mLtP6S8Jj5xMw2jVuMIdw=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "john_werdy",
+    "first_name": "John",
+    "last_name": "Werdy",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-03-13T11:24:04.384Z",
+    "position": 3,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "task_manager.worker",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$WfLQA7xJFs88BIKqmWRBoC$M5odwnlfFksZ2QGDY5QY0iDo8Fs/bSsV8OESCIUsy4w=",
+    "last_login": "2024-03-13T12:51:27.423Z",
+    "is_superuser": false,
+    "username": "tom_liu",
+    "first_name": "Tom",
+    "last_name": "Liu",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-03-13T12:51:04.371Z",
+    "position": 8,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "task_manager.worker",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$TDY0bFv5G6nENTxZ2X4uRg$3iB2ZtzfrqwzS2HTpbk6esnhlJUoPqO80L3sQ9RxTWA=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "greg_f",
+    "first_name": "Greg",
+    "last_name": "Fajin",
+    "email": "greg@fajin.greg",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-03-14T22:01:32.561Z",
+    "position": 9,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "task_manager.tasktype",
+  "pk": 1,
+  "fields": {
+    "name": "Bug"
+  }
+},
+{
+  "model": "task_manager.tasktype",
+  "pk": 2,
+  "fields": {
+    "name": "New feature"
+  }
+},
+{
+  "model": "task_manager.tasktype",
+  "pk": 3,
+  "fields": {
+    "name": "Breaking change"
+  }
+},
+{
+  "model": "task_manager.tasktype",
+  "pk": 4,
+  "fields": {
+    "name": "Refactoring"
+  }
+},
+{
+  "model": "task_manager.tasktype",
+  "pk": 5,
+  "fields": {
+    "name": "QA"
+  }
+},
+{
+  "model": "task_manager.tasktype",
+  "pk": 6,
+  "fields": {
+    "name": "Coding"
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 1,
+  "fields": {
+    "name": "Create initial description",
+    "description": "Write aproximately set of famous project scheme",
+    "deadline": "2024-03-14",
+    "is_completed": false,
+    "priority": "important",
+    "task_type": 2,
+    "assignees": [
+      2,
+      1
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 2,
+  "fields": {
+    "name": "Fix bug No. 3 in module \"Calc_Price\"",
+    "description": "Fix bug No. 3 in module \"Calc_Price\":\r\n1. Check types\r\n2. Add round()\r\n3. Validate",
+    "deadline": "2024-03-20",
+    "is_completed": false,
+    "priority": "critical",
+    "task_type": 1,
+    "assignees": [
+      8,
+      1
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 3,
+  "fields": {
+    "name": "Add .readme",
+    "description": "Add readme info",
+    "deadline": "2024-03-30",
+    "is_completed": true,
+    "priority": "medium",
+    "task_type": 2,
+    "assignees": [
+      2,
+      1
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 4,
+  "fields": {
+    "name": "To implement own Task Manager",
+    "description": "Smth to do. \r\nSo, implement your own Task Manager, which will handle all possible problems during product development in your team. \r\nEveryone from the team can create Task, assign this Task to team-members, and mark the Task as done (of course, better before the deadlines).",
+    "deadline": "2024-03-30",
+    "is_completed": false,
+    "priority": "critical",
+    "task_type": 3,
+    "assignees": [
+      2,
+      7,
+      1
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 5,
+  "fields": {
+    "name": "Create repository",
+    "description": "Create Git repository with initial data of project.",
+    "deadline": "2024-03-30",
+    "is_completed": true,
+    "priority": "critical",
+    "task_type": 3,
+    "assignees": [
+      2,
+      1,
+      3
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 6,
+  "fields": {
+    "name": "Solve algo task",
+    "description": "def xo_3d(moves: list) -> str:\r\n    # write your code here\r\n    pass",
+    "deadline": "2024-03-14",
+    "is_completed": false,
+    "priority": "urgent",
+    "task_type": 2,
+    "assignees": [
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 7,
+  "fields": {
+    "name": "Meeting with",
+    "description": "Meeting with team",
+    "deadline": "2024-03-20",
+    "is_completed": false,
+    "priority": "urgent",
+    "task_type": 2,
+    "assignees": [
+      2,
+      1,
+      6
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 8,
+  "fields": {
+    "name": "Create initial design",
+    "description": "Create 3 - 4 options of ui design\r\nsend its to team members\r\nprint",
+    "deadline": "2024-03-31",
+    "is_completed": false,
+    "priority": "important",
+    "task_type": 1,
+    "assignees": [
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "task_manager.task",
+  "pk": 9,
+  "fields": {
+    "name": "Implement portfolio Project",
+    "description": "implement Portfolio Project. \r\nas customization of the project that was implementing during the Django module",
+    "deadline": "2024-03-20",
+    "is_completed": false,
+    "priority": "medium",
+    "task_type": 3,
+    "assignees": [
+      8,
+      1
+    ]
+  }
+}
+]

@@ -1,0 +1,51 @@
+{% extends "layouts/base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-8">
+      <h1> Type of Task List</h1>
+    </div>
+    <div class="col-md-4">
+      <a href="{% url 'task_manager:tasktype-create' %}" class="btn btn-primary link-to-page">
+        + Create
+      </a>
+    </div>
+  </div>
+  
+  {% if tasktype_list %}
+    <table class="table table-hover table-striped">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      {% for tasktype in tasktype_list %}
+        <tr>
+          <td>
+              {{ tasktype.id }}
+          </td>
+          <td>
+              {{ tasktype.name }}
+          </td>
+          <td>
+              <a class="link-info" href="{% url 'task_manager:tasktype-update' pk=tasktype.id %}">
+                Update
+              </a>
+            </td>
+            <td>
+              <a class="link-danger" href="{% url 'task_manager:tasktype-delete' pk=tasktype.id %}">
+                Delete
+              </a>
+            </td>
+        </tr>
+      {% endfor %}
+    </table>
+
+  {% else %}
+      <p>There are no task types in the system.</p>
+  {% endif %}
+  
+{% endblock %}

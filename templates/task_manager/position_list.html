@@ -1,0 +1,51 @@
+{% extends "layouts/base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-9">
+      <h1> Position List</h1>
+    </div>
+    <div class="col-md-3">
+      <a href="{% url 'task_manager:position-create' %}" class="btn btn-primary link-to-page">
+        + Create
+      </a>
+    </div>
+  </div>
+  
+  {% if position_list %}
+    <table class="table table-hover table-striped">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      {% for position in position_list %}
+        <tr>
+          <td>
+              {{ position.id }}
+          </td>
+          <td>
+              {{ position.name }}
+          </td>
+          <td>
+              <a class="link-info" href="{% url 'task_manager:position-update' pk=position.id %}">
+                Update
+              </a>
+            </td>
+            <td>
+              <a class="link-danger" href="{% url 'task_manager:position-delete' pk=position.id %}">
+                Delete
+              </a>
+            </td>
+        </tr>
+      {% endfor %}
+    </table>
+
+  {% else %}
+      <p>There are no position in the system.</p>
+  {% endif %}
+  
+{% endblock %}
