@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "layouts/base.html" %}
 
 {% block content %}
   <h1>
@@ -45,12 +45,12 @@
         <div class="col-sm-3"><strong>Status:</strong></div>
         <div class="col-sm-4">
           {% if task.is_completed %}
-            Completed
+            <span class="fw-extrabold text-success">Completed</span>
             <a href="{% url 'task_manager:set-task-completed' pk=task.id %}" class="btn btn-sm btn-outline-warning link-to-page">
               Set Task In Progress
             </a>
           {% else %}
-            In progress
+            <span class="fw-extrabold text-danger">In progress</span>
             <a href="{% url 'task_manager:set-task-completed' pk=task.id %}" class="btn btn-sm btn-outline-success link-to-page">
               Set Task Completed
             </a>
@@ -105,7 +105,7 @@
       <tr>
         <td><p> {{ worker.position }}</p></td>
         <td><p> {{ worker.first_name }} {{ worker.last_name }}</p></td>
-        <td><p> <a href="{% url 'task_manager:worker-detail' pk=worker.id %}">{{ worker.username }}</a></p></td>
+        <td><p> <a class="link-info" href="{% url 'task_manager:worker-detail' pk=worker.id %}">{{ worker.username }}</a></p></td>
       </tr>
       {% empty %}
       {% endfor %}

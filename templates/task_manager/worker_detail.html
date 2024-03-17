@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "layouts/base.html" %}
 
 {% block content %}
   <h1>
@@ -72,15 +72,15 @@
 
     {% for task in tasks %}
         <tr>
-          <td><p><a href="{% url 'task_manager:task-detail' pk=task.id %}">{{ task.name }}</a></p></td>
+          <td><p><a class="link-info" href="{% url 'task_manager:task-detail' pk=task.id %}">{{ task.name }}</a></p></td>
           <td><p> {{ task.priority }}</p></td>
           <td><p> {{ task.deadline }}</p></td>
           <td><p> {{ task.task_type.name }}</p></td>
           <td>
             {% if task.is_completed %}
-              <p> Completed </p>
+              <span class="text-success">Completed</span>
             {% else %}
-              <p> In progress </p>
+              <span class="text-danger">In progress</span>
             {% endif %}
           </td>
         </tr>

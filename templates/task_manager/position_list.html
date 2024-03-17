@@ -1,19 +1,18 @@
-{% extends "base.html" %}
+{% extends "layouts/base.html" %}
 {% load crispy_forms_filters %}
 
 {% block content %}
-  <h1>
-    Position List
-    <a href="{% url 'task_manager:position-create' %}" class="btn btn-primary link-to-page">
-      Create
-    </a>
-  </h1>
-  <form method="get" action="" class="form-inline">
-    {{ search_form|crispy }}
-    <input type="submit" value="🔍" class="btn btn-secondary">
-  </form>  
-  <br>
-
+  <div class="row">
+    <div class="col-md-9">
+      <h1> Position List</h1>
+    </div>
+    <div class="col-md-3">
+      <a href="{% url 'task_manager:position-create' %}" class="btn btn-primary link-to-page">
+        + Create
+      </a>
+    </div>
+  </div>
+  
   {% if position_list %}
     <table class="table table-hover table-striped">
       <tr>
@@ -32,13 +31,12 @@
               {{ position.name }}
           </td>
           <td>
-              <a href="{% url 'task_manager:position-update' pk=position.id %}">
+              <a class="link-info" href="{% url 'task_manager:position-update' pk=position.id %}">
                 Update
               </a>
             </td>
             <td>
-              <a style="color: red"
-                href="{% url 'task_manager:position-delete' pk=position.id %}">
+              <a class="link-danger" href="{% url 'task_manager:position-delete' pk=position.id %}">
                 Delete
               </a>
             </td>
@@ -49,4 +47,5 @@
   {% else %}
       <p>There are no position in the system.</p>
   {% endif %}
+  
 {% endblock %}

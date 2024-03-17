@@ -1,52 +1,58 @@
-{% extends "base.html" %}
+{% extends "layouts/base.html" %}
 {% load crispy_forms_filters %}
 
 {% block content %}
-  <h1>
-    Task List
-    <a href="{% url 'task_manager:task-create' %}" class="btn btn-primary link-to-page">
-      Create
-    </a>
-  </h1>
-  
-  <form method="get" action="" class="form-inline">
-    {{ search_form|crispy }}
-    <input type="submit" value="🔍" class="btn btn-secondary">
-  </form>  
-  <br>
+  <div class="row">
+    <div class="col-md-8">
+      <h1> Task List</h1>
+    </div>
+    <div class="col-md-4">
+      <a href="{% url 'task_manager:task-create' %}" class="btn btn-primary link-to-page">
+        + Create
+      </a>
+    </div>
+  </div>
 
-    {% if task_list %}
-    <table class="table table-hover table-striped">
-      <tr>
-        <th>ID</th>
-        <th class="col-content">Task Name</th>
-        <th>Deadline</th>
-        <th>Priority</th>
-        <th>Type</th>
-        <th>Status</th>
-        <th>Description</th>
-      </tr>
-    {% for task in task_list %}
-      <tr>
-        <td>{{ task.id }}</td>
-        <td class="col-content"><a href="{{ task.get_absolute_url }}">{{ task.name }}</a></td>
-        <td>{{ task.deadline|date:"D, d M Y"  }}</td>
-        <td>{{ task.priority }}</td>
-        <td>{{ task.task_type }}</td>
-        <td>
-            {% if task.is_completed %}
-              <p> Completed </p>
-            {% else %}
-              <p>In progress</p>
-            {% endif %}
-        </td>
-        <td>{{ task.description|truncatewords:10 }} <a href="{{ task.get_absolute_url }}"> more detail</a>...</td>
-      </tr>
+  {% if task_list %}
+  <div class="row">
+    <div class="col-md-12">
+  <table class="table table-bordered table-hover table-striped">
+    <tr>
+      <th>ID</th>
+      <th>Task Name</th>
+      <th>Deadline</th>
+      <th>Priority</th>
+      <th>Type</th>
+      <th>Status</th>
+      <th>Description</th>
+    </tr>
+  {% for task in task_list %}
+    <tr>
+      <td>{{ task.id }}</td>
+      <td><a class="link-info" href="{{ task.get_absolute_url }}">{{ task.name }}</a></td>
+      <td>{{ task.deadline|date:"D, d M Y"  }}</td>
+      <td>{{ task.priority }}</td>
+      <td>{{ task.task_type }}</td>
+      <td>
+          {% if task.is_completed %}
+            <span class="text-success">Completed</span>
+          {% else %}
+            <span class="text-danger">In progress</span>
+          {% endif %}
+      </td>
+      <td class="text-wrap">
+        {{ task.description|truncatewords:15 }}
+        <a class="link-info" href="{{ task.get_absolute_url }}"> (more detail)</a>
+      </td>
+    </tr>
 
-    {% endfor %}
+  {% endfor %}
 
-    </table>
-    {% else %}
-      <p>There are no tasks in the system.</p>
-    {% endif %}
+  </table>
+    </div>
+  </div>
+  {% else %}
+    <p>There are no tasks in the system.</p>
+  {% endif %}
+
 {% endblock %}

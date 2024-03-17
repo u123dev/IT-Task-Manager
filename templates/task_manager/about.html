@@ -1,0 +1,77 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-8">
+      <h1 class="text-gray-700"> About Task Manager System </h1>
+      <h4 class="m-sm-2 col-md-6 text-black-50">for smarter IT teams</h4>
+    </div>
+  </div>
+
+    <div class="py-2">
+      <p class="fs-5 fw-bold mb-2 col-12 text-center text-muted">
+      </p>
+    </div>
+
+    <div class="row">
+
+        <div class="col-12 col-sm-6 col-xl-12 mb-4">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <div class="row d-block d-xl-flex align-items-center">
+                        <div class="col-12 col-xl-2 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+                            <div class="icon-shape icon-shape-tertiary rounded me-4 me-sm-0">
+                                <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            </div>
+                            <div class="d-sm-none">
+                                <p class="h5">Total Tasks</p>
+                                <h3 class="fw-extrabold mb-1">{{ num_tasks }}</h3>
+                            </div>
+                        </div>
+                        <div class="col-12 col-xl-10 px-xl-0">
+                            <div class="d-none d-sm-block">
+                                <p class="h5 text-gray-600 mb-0">
+                                  Plan, manage and track all your team's tasks in one app.
+                                </p>
+                                <p></p>
+                                <p class="h5 text-gray-600 mb-0">
+                                  A task management app is a digital way to keep track of workers’ tasks and deadlines.
+                                </p>
+                                <li role="separator" class="dropdown-divider mt-4 mb-3 border-gray-700"></li>
+                                <li class="h5 text-gray-600 mb-0">
+                                  Make worker task tracking easier by managing all tasks right from app.
+                                </li>
+                              <p></p>
+                                <li class="h5 text-gray-600 mb-0">
+                                  Set up tasks with due dates to automate daily assignments.
+                                </li>
+                              <p></p>
+                                <li class="h5 text-gray-600 mb-0">
+                                  Add detailed descriptions so workers know exactly what needs to be done.
+                                </li>
+                              
+                                <h3 class="fw-extrabold mb-2 text-success">{{ num_tasks }}</h3>
+                            </div>
+                        </div>
+                      <li role="separator" class="dropdown-divider mt-4 mb-3 border-gray-700"></li>
+                      <p class="h6 text-gray-600 mb-0 mt-2 text-end">
+                        Feel free to contact developer.
+                      </p>                      
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

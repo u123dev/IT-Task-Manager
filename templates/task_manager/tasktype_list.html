@@ -1,18 +1,17 @@
-{% extends "base.html" %}
+{% extends "layouts/base.html" %}
 {% load crispy_forms_filters %}
 
 {% block content %}
-  <h1>
-    Type of Task List
-    <a href="{% url 'task_manager:tasktype-create' %}" class="btn btn-primary link-to-page">
-      Create
-    </a>
-  </h1>
-  <form method="get" action="" class="form-inline">
-    {{ search_form|crispy }}
-    <input type="submit" value="🔍" class="btn btn-secondary">
-  </form>  
-  <br>
+  <div class="row">
+    <div class="col-md-8">
+      <h1> Type of Task List</h1>
+    </div>
+    <div class="col-md-4">
+      <a href="{% url 'task_manager:tasktype-create' %}" class="btn btn-primary link-to-page">
+        + Create
+      </a>
+    </div>
+  </div>
   
   {% if tasktype_list %}
     <table class="table table-hover table-striped">
@@ -32,13 +31,12 @@
               {{ tasktype.name }}
           </td>
           <td>
-              <a href="{% url 'task_manager:tasktype-update' pk=tasktype.id %}">
+              <a class="link-info" href="{% url 'task_manager:tasktype-update' pk=tasktype.id %}">
                 Update
               </a>
             </td>
             <td>
-              <a style="color: red"
-                href="{% url 'task_manager:tasktype-delete' pk=tasktype.id %}">
+              <a class="link-danger" href="{% url 'task_manager:tasktype-delete' pk=tasktype.id %}">
                 Delete
               </a>
             </td>
@@ -49,4 +47,5 @@
   {% else %}
       <p>There are no task types in the system.</p>
   {% endif %}
+  
 {% endblock %}
