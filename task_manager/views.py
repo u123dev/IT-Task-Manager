@@ -1,5 +1,4 @@
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
@@ -223,31 +222,29 @@ class TaskDeleteView(LoginRequiredMixin, generic.DeleteView):
     success_url = reverse_lazy("task_manager:task-list")
 
 
-@login_required
-def toggle_assign_task_to_current_user(request, pk):
-    worker = Worker.objects.get(id=request.user.id)
-    if (Task.objects.get(id=pk) in worker.tasks.all()):
-        worker.tasks.remove(pk)
-    else:
-        worker.tasks.add(pk)
-    return HttpResponseRedirect(reverse_lazy(
-        "task_manager:task-detail", args=[pk])
-    )
+class TaskAssignWorker(LoginRequiredMixin, generic.DetailView):
+    model = Task
 
-
-@login_required
-def set_completed_task(request, pk):
-    task = Task.objects.get(id=pk)
-    if task:
-        if task.is_completed:
-            task.is_completed = False
+    def get(self, request, **kwargs):
+        self.object = self.get_object()
+        worker = Worker.objects.get(id=request.user.id)
+        pk = self.kwargs.get("pk")
+        if self.object in worker.tasks.all():
+            worker.tasks.remove(pk)
         else:
-            task.is_completed = True
-        task.save()
+            worker.tasks.add(pk)
+        return HttpResponseRedirect(self.object.get_absolute_url())
 
-    return HttpResponseRedirect(reverse_lazy(
-        "task_manager:task-detail", args=[pk])
-    )
+
+class TaskSetCompleted(LoginRequiredMixin, generic.DetailView):
+    model = Task
+
+    def get(self, request, **kwargs):
+        self.object = self.get_object()
+        self.object.is_completed = not self.object.is_completed
+        self.object.save()
+        return HttpResponseRedirect(self.object.get_absolute_url())
+
 
 
 def about(request: HttpRequest) -> HttpResponse:
