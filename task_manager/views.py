@@ -225,7 +225,7 @@ class TaskDeleteView(LoginRequiredMixin, generic.DeleteView):
 class TaskAssignWorker(LoginRequiredMixin, generic.DetailView):
     model = Task
 
-    def get(self, request, **kwargs):
+    def post(self, request, **kwargs):
         self.object = self.get_object()
         worker = Worker.objects.get(id=request.user.id)
         pk = self.kwargs.get("pk")
@@ -239,12 +239,11 @@ class TaskAssignWorker(LoginRequiredMixin, generic.DetailView):
 class TaskSetCompleted(LoginRequiredMixin, generic.DetailView):
     model = Task
 
-    def get(self, request, **kwargs):
+    def post(self, request, **kwargs):
         self.object = self.get_object()
         self.object.is_completed = not self.object.is_completed
         self.object.save()
         return HttpResponseRedirect(self.object.get_absolute_url())
-
 
 
 def about(request: HttpRequest) -> HttpResponse:

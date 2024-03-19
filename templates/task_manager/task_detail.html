@@ -44,17 +44,24 @@
       <div class="row">
         <div class="col-sm-3"><strong>Status:</strong></div>
         <div class="col-sm-4">
-          {% if task.is_completed %}
-            <span class="fw-extrabold text-success">Completed</span>
-            <a href="{% url 'task_manager:set-task-completed' pk=task.id %}" class="btn btn-sm btn-outline-warning link-to-page">
-              Set Task In Progress
-            </a>
-          {% else %}
-            <span class="fw-extrabold text-danger">In progress</span>
-            <a href="{% url 'task_manager:set-task-completed' pk=task.id %}" class="btn btn-sm btn-outline-success link-to-page">
-              Set Task Completed
-            </a>
-          {% endif %}
+
+          <form action="{% url 'task_manager:set-task-completed' pk=task.id %}" method="post">
+            {% csrf_token %}
+
+            {% if task.is_completed %}
+              <span class="fw-extrabold fs-6 text-success pe-8">Completed</span>
+              <button type="submit" class="btn btn-sm btn-outline-warning link-to-page">
+                Set Task In Progress
+              </button>
+            {% else %}
+              <span class="fw-extrabold fs-6 text-danger pe-8">In progress</span>
+              <button type="submit" class="btn btn-sm btn-outline-success link-to-page">
+                Set Task Completed
+              </button>
+            {% endif %}
+
+            </button>
+          </form>
         </div>
       </div>
     </td>
@@ -80,19 +87,28 @@
   </div>
   <br>
 
-  {% if user in task.assignees.all %}
-    <a href="{% url 'task_manager:toggle-task-assign' pk=task.id %}" class="btn btn-sm btn-outline-danger link-to-page">
-      Delete Me ({{ user.username }}) from this task
-    </a>
-  {% else %}
-    <a href="{% url 'task_manager:toggle-task-assign' pk=task.id %}" class="btn btn-sm btn-outline-success link-to-page">
-      Assign Me ({{ user.username }}) to this task
-    </a>
-  {% endif %}
-  <br>
-
   {% if task.assignees.all %}
-    <h4 style="text-align: center">Workers</h4>
+    
+    <div class="row">
+    <h4  class="col-md-6 text-end">Workers</h4>
+    <span class="col-md-5 text-end">
+      <form action="{% url 'task_manager:toggle-task-assign' pk=task.id %}" method="post" class="form-inline">
+      {% csrf_token %}
+    
+        {% if user in task.assignees.all %}
+          <button type="submit" class="btn btn-sm btn-outline-danger link-to-page">
+            Delete Me ({{ user.username }}) from this task
+          </button>
+        {% else %}
+          <button type="submit" class="btn btn-sm btn-outline-success link-to-page">
+            Assign Me ({{ user.username }}) to this task
+          </button>
+        {% endif %}
+    
+      </form>  
+    </span>    
+    </div>
+    <br>
 
     <table class="table table-hover table-striped">
       <tr>
