@@ -1,6 +1,42 @@
+# IDE
 .idea/
 .vscode/
+
+# Environments
 .env
+.venv
+env/
 venv/
-.pytest_cache/
+ENV/
+env.bak/
+venv.bak/
+
+# If your build process includes running collectstatic,
+# then you don't need  to include staticfiles/
+# <django-project-name>/staticfiles/
+
+### Django ###
+*.log
+*.pot
+*.pyc
 **__pycache__/
+__pycache__/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
