@@ -17,6 +17,17 @@ ___
 
 - Add detailed descriptions so workers know exactly what needs to be done.
 
+___
+## Check It Out !
+[IT Task Manager](https://itask.pp.ua) project deployed by Render to:
+### [itask.pp.ua](https://itask.pp.ua) 
+
+To log in use test entry:
+  - Login: `admin`
+  - Password: `admin`
+
+___
+
 ### System requirements
 
 * **Python 3.10+ (need to be installed)**
@@ -73,3 +84,6 @@ Create new task by **`+ New Task`** button.
 ### Demo
 
 ![website](demo.jpg)
+
+### Contact
+Feel free to contact: u123@ua.fm

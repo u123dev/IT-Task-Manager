@@ -143,7 +143,7 @@ class WorkerListView(LoginRequiredMixin, generic.ListView):
 
 class WorkerDetailView(LoginRequiredMixin, generic.DetailView):
     model = Worker
-    queryset = Worker.objects.all(). prefetch_related("tasks")
+    queryset = Worker.objects.all().prefetch_related("tasks")
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(WorkerDetailView, self).get_context_data(**kwargs)
